@@ -1,0 +1,11 @@
+ID,name,description,flavor,weightInKg,price,currency,stock
+1d3b9ca4-7be5-4318-bfd3-2d6e97fb94d6,Whiskas Adult Dry Food,Complete dry food for adult cats,Chicken,1.5,12.99,USD,120
+a92dbb05-7c29-4cf1-b4ba-a30771ea757f,Whiskas Adult Dry Food,Complete dry food for adult cats,Tuna,1.5,12.99,USD,95
+7ae35a73-48d8-4e90-8141-12b445379a84,Felix Wet Pouches,Tender chunks in gravy,Salmon,0.1,1.49,USD,300
+6c87f596-7b4c-488e-9fde-8b8b26b674f0,Felix Wet Pouches,Tender chunks in jelly,Beef,0.1,1.49,USD,280
+a4ceaabf-e31a-4201-a778-e385afa54e77,Royal Canin Kitten,Nutrition for kittens up to 12 months,Chicken,2.0,24.99,USD,60
+97b0e7d4-bd77-4585-8657-a85b10b62bb0,Royal Canin Indoor,Formulated for indoor cats,Turkey,2.0,26.5,USD,45
+1f105e2d-198b-4990-adf3-e02511e04329,Sheba Perfect Portions,Premium wet cat food cups,Salmon Pate,0.075,2.99,USD,150
+6a3f262c-76f2-432e-9b8b-02d19e58e3ba,Sheba Perfect Portions,Premium wet cat food cups,Chicken Pate,0.075,2.99,USD,140
+5d7c6a82-a20c-4f50-896d-2ccb7f0e73b0,Purina ONE Dry Food,High protein dry cat food,Salmon,3.0,19.99,USD,75
+3f6d4649-85c4-44c6-ac0a-4c1284d9f9ef,Blue Buffalo Wilderness,Grain-free dry food,Duck,2.5,29.99,USD,50

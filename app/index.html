@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Table</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body > div,
+        .sapUiComponentContainer,
+        .sapUiComponentContainer > div,
+        .sapUiView {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://ui5.sap.com/1.120.50/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3_dark"
+        data-sap-ui-resourceroots='{"catfood.productstable": "./"}'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatversion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameoptions="trusted">
+    </script>
+</head>
+<body class="sapUiBody" id="content">
+    <div
+        data-sap-ui-component
+        data-name="catfood.productstable"
+        data-id="productstable"
+        data-settings='{"id" : "productstable"}'
+        data-handle-validation="true"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@host = http://localhost:4004
+@service = {{host}}/odata/v4/catalog
+
+### Create a product
+# @name createProduct
+POST {{service}}/Products
+Content-Type: application/json
+
+{
+  "name": "Salmon Feast",
+  "description": "Grain-free wet food with real salmon",
+  "flavor": "Salmon",
+  "weightInKg": 0.4,
+  "price": 3.99,
+  "currency": "USD",
+  "stock": 100
+}
+
+### Delete the product created above
+DELETE {{service}}/Products({{createProduct.response.body.ID}})

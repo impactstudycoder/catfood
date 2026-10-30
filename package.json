@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@cap-js/postgres": "^3.1.2",
+    "@cap-js/sqlite": "^3.0.2",
+    "@sap/cds": "^10.0.5",
+    "express-openid-connect": "^3.4.0"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/cds/bin/serve.js",
+    "watch": "cds watch",
+    "watch:env": "node scripts/watch-env.js",
+    "deploy": "cds deploy",
+    "pg:deploy": "node --env-file=.env.pg node_modules/@sap/cds/bin/deploy.js",
+    "pg:start": "node --env-file=.env.pg node_modules/@sap/cds/bin/serve.js"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        },
+        "[pg]": {
+          "kind": "postgres",
+          "pool": {
+            "acquireTimeoutMillis": 10000
+          },
+          "credentials": {
+            "ssl": {
+              "rejectUnauthorized": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

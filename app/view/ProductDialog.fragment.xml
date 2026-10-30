@@ -1,0 +1,65 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Dialog
+        id="productDialog"
+        contentWidth="28rem"
+        title="{= ${ui>/mode} === 'edit' ? ${i18n>dialogTitleEdit} : ${i18n>dialogTitleCreate} }">
+        <content>
+            <form:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12">
+                <Label text="{i18n>fieldName}" required="true" />
+                <Input id="productNameInput" value="{name}" valueState="{ui>/nameValueState}" />
+
+                <Label text="{i18n>fieldDescription}" />
+                <Input value="{description}" />
+
+                <Label text="{i18n>fieldFlavor}" />
+                <Input value="{flavor}" />
+
+                <Label text="{i18n>fieldWeight}" />
+                <Input
+                    value="{
+                        path: 'weightInKg',
+                        type: 'sap.ui.model.odata.type.Decimal',
+                        constraints: { precision: 5, scale: 2 }
+                    }"
+                    type="Number" />
+
+                <Label text="{i18n>fieldPrice}" required="true" />
+                <Input
+                    id="productPriceInput"
+                    value="{
+                        path: 'price',
+                        type: 'sap.ui.model.odata.type.Decimal',
+                        constraints: { precision: 9, scale: 2 }
+                    }"
+                    type="Number"
+                    valueState="{ui>/priceValueState}" />
+
+                <Label text="{i18n>fieldCurrency}" />
+                <Input value="{currency}" maxLength="3" />
+
+                <Label text="{i18n>fieldStock}" />
+                <Input
+                    value="{
+                        path: 'stock',
+                        type: 'sap.ui.model.odata.type.Int32'
+                    }"
+                    type="Number" />
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button text="{i18n>btnSave}" type="Emphasized" class="catfoodButton" press=".onDialogSavePress" />
+        </beginButton>
+        <endButton>
+            <Button text="{i18n>btnCancel}" class="catfoodButton" press=".onDialogCancelPress" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

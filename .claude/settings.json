@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.pg)",
+      "Read(./**/.env)",
+      "Read(./**/.env.pg)",
+      "Edit(./.env.pg)",
+      "Bash(*.env.pg)",
+      "Bash(*.env.pg *)",
+      "Bash(*.env.pg\"*)",
+      "Bash(*.env.pg'*)",
+      "Bash(*.env.pg|*)",
+      "Bash(*.env.pg;*)",
+      "PowerShell(*.env.pg)",
+      "PowerShell(*.env.pg *)",
+      "PowerShell(*.env.pg\"*)",
+      "PowerShell(*.env.pg'*)",
+      "PowerShell(*.env.pg|*)",
+      "PowerShell(*.env.pg;*)"
+    ]
+  }
+}

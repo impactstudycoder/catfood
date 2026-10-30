@@ -1,0 +1,104 @@
+<mvc:View
+    controllerName="catfood.productstable.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <Page titleAlignment="Center">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Avatar
+                        src="images/Catfood_Logo.png"
+                        displaySize="S"
+                        decorative="false"
+                        tooltip="{i18n>appTitle}" />
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="{i18n>headerAppTitle}" level="H1" titleStyle="H4" />
+                </contentMiddle>
+                <contentRight>
+                    <Text text="{user>/name}" />
+                    <Avatar
+                        src="{= ${user>/picture} || 'sap-icon://person-placeholder' }"
+                        displaySize="XS"
+                        decorative="false"
+                        class="sapUiTinyMarginBegin sapUiMediumMarginEnd" />
+                    <Button
+                        icon="sap-icon://log"
+                        text="{i18n>btnLogout}"
+                        class="catfoodButton"
+                        type="Transparent"
+                        press=".onLogoutPress" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <content>
+            <Table
+                id="productsTable"
+                items="{ path: '/Products', parameters: { $orderby: 'name', $$updateGroupId: 'productEdit' } }"
+                growing="true"
+                growingThreshold="20"
+                noDataText="{i18n>noProducts}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>productsTableHeader}" level="H2" />
+                        <ToolbarSpacer />
+                        <Button
+                            icon="sap-icon://add"
+                            text="{i18n>btnAdd}"
+                            class="catfoodButton"
+                            type="Emphasized"
+                            press=".onCreatePress" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="{i18n>colName}" /></Column>
+                    <Column><Text text="{i18n>colDescription}" /></Column>
+                    <Column><Text text="{i18n>colFlavor}" /></Column>
+                    <Column hAlign="End"><Text text="{i18n>colWeight}" /></Column>
+                    <Column hAlign="End"><Text text="{i18n>colPrice}" /></Column>
+                    <Column hAlign="End"><Text text="{i18n>colStock}" /></Column>
+                    <Column hAlign="Center"><Text text="{i18n>colActions}" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{name}" />
+                            <Text text="{description}" />
+                            <Text text="{flavor}" />
+                            <Text text="{
+                                path: 'weightInKg',
+                                formatter: '.formatter.formatPrice'
+                            }" />
+                            <ObjectNumber
+                                number="{
+                                    path: 'price',
+                                    formatter: '.formatter.formatPrice'
+                                }"
+                                unit="{currency}" />
+                            <ObjectStatus
+                                text="{stock}"
+                                state="{
+                                    path: 'stock',
+                                    formatter: '.formatter.formatStockState'
+                                }" />
+                            <HBox justifyContent="Center">
+                                <Button
+                                    icon="sap-icon://edit"
+                                    tooltip="{i18n>btnEdit}"
+                                    type="Transparent"
+                                    press=".onEditPress" />
+                                <Button
+                                    icon="sap-icon://delete"
+                                    tooltip="{i18n>btnDelete}"
+                                    type="Transparent"
+                                    press=".onDeletePress" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
