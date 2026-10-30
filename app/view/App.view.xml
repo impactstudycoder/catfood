@@ -15,7 +15,7 @@
                         tooltip="{i18n>appTitle}" />
                 </contentLeft>
                 <contentMiddle>
-                    <Title text="{i18n>headerAppTitle}" level="H1" titleStyle="H4" />
+                    <Title text="{i18n>headerAppTitle}" level="H1" titleStyle="H4" class="catfoodTitle" />
                 </contentMiddle>
                 <contentRight>
                     <Text text="{user>/name}" />
